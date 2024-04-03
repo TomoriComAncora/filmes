@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "./Filme.css";
+import { toast } from "react-toastify";
 
 function Filme() {
   const [filme, setFilme] = useState({});
@@ -46,13 +47,13 @@ function Filme() {
     console.log(filmeRepitido);
 
     if (filmeRepitido) {
-      alert("Filme já existe na lista");
+      toast.warn("Já existe esse filme na lista!");
       return;
     }
 
     filmesSalvos.push(filme);
     localStorage.setItem("@filmes", JSON.stringify(filmesSalvos));
-    alert("Filme salvo com sucesso");
+    toast.success("Filme salvo com sucesso");
   };
 
   if (load) {

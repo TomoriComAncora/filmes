@@ -30,6 +30,7 @@
     max-width: 200px;
     word-wrap: break-word;
     gap: 1rem;
+    margin-right: 1rem;
 }
 
 .logo-titulo span{
@@ -54,3 +55,9 @@
     text-decoration: none;
     color: #116feb;
 }
+
+@media (max-width: 770px) {
+    .meus-filmes ul{
+        min-width: 200px;
+    }
+}   
